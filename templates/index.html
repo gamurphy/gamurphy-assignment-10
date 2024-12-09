@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1></h1>
+    <form id="experiment-form">
+        <div class="input-group">
+            <label for="image_query">Image Query:</label>
+            <input type="file" id="image_query" name="image_query" required> 
+        </div>
+        <div class="input-group">
+            <label for="text_query">Text Query:</label>
+            <input type="str" id="text_query" name="text_query" required>
+        </div>
+        <div class="input-group">
+            <label for="QueryWeight">Hybrid Query Weight(>>):</label>
+            <input type="number" step="0.01" id="QueryWeight" name="QueryWeight" required> 
+        </div>
+        <div>
+        <label for="query_type">Select Query Type:</label>
+        <select id="query_type" name="query_type">
+            <option value="Text Query">Text Query</option>
+            <option value="Image Query">Image Query</option>
+            <option value="Hybrid Query">Hybrid Query</option>
+        </select>
+        <label for="PCA">Embeddings Corresponding to the first k principle:</label>
+        <select id="PCA" name="PCA" required>
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="results" style="display: none;">
+        <h2>Top 5 Similar Images:</h2>
+        <div id="images">
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
